@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Xablau from 'prop-types';
 
-class Image extends React.Component {
+class Image extends Component {
   render() {
-    const { source, alternativeText, corno } = this.props;
+    const { source, alternativeText } = this.props;
     return ( 
       <>
         <img src={source} alt={alternativeText} />
-        <p>{corno}</p>
       </>
     )
   }
 }
+
+Image.propTypes = {
+  source: Xablau.string.isRequired,
+  alternativeText: Xablau.string.isRequired
+}.isRequired
 
 export default Image;
