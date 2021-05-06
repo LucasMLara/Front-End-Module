@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Xablau from 'prop-types';
+import PropType from 'prop-types';
 
 class Image extends Component {
   render() {
@@ -13,8 +13,8 @@ class Image extends Component {
 }
 
 Image.propTypes = {
-  source: Xablau.string.isRequired,
-  alternativeText: Xablau.string.isRequired
+  source: PropType.string.isRequired,
+  alternativeText: PropType.string.isRequired
 }.isRequired
 
 export default Image;
