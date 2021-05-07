@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
   render() { 
-    const { name, type, image, averageWeight, measurementUnit } = this.props
+    const { name, type, image, averageWeight: {value, measurementUnit} } = this.props
       
     return(
         <section className="pokemonz">
         <h1>{name}</h1>
         <h2>{type}</h2>
-        <p>{averageWeight}{measurementUnit}</p>
+        <p>{value}{measurementUnit}</p>
         <img src = {image} alt={name}/>
         </section>
           )

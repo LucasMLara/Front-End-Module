@@ -7,7 +7,7 @@ class Pokedex extends Component {
     
     return (  <section>
             {pokemons.map((pokemaum)=>{
-              return <Pokemon name={pokemaum.name} type={pokemaum.type} averageWeight={pokemaum.averageWeight.value} measurementUnit={pokemaum.averageWeight.measurementUnit} image={pokemaum.image} alt={pokemaum.name}/>
+              return <Pokemon {...pokemaum}/>
             }
 
 )}
