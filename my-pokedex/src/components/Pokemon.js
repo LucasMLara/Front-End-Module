@@ -1,35 +1,29 @@
 import React from 'react';
 import '../pokemon.css';
-// import PropTypes from 'prop-types';
+
+import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
   render() { 
-    // const { name, type, averageWeight, image} = this.props
-    const pikachu = {id: 25,
-      name: "Pikachu",
-      type: 'Electric',
-      averageWeight: {
-          value: 6.0,
-          measurementUnit: "kg"
-      },
-      image: "https:cdn2.bulbagarden.net/upload/b/b2/Spr_5b_025_m.png",
-      moreInfo: "https:bulbapedia.bulbagarden.net/wiki/Pikachu_(Pok%C3%A9mon)"
-    }
-      return(
+    const { name, type, image, averageWeight, measurementUnit } = this.props
+      
+    return(
         <section className="pokemonz">
-        <h1>{pikachu.name}</h1>
-        <h2>{pikachu.type}</h2>
-        <img src = {pikachu.image} alt="Rato Gordo Amarelo"/>
+        <h1>{name}</h1>
+        <h2>{type}</h2>
+        <p>{averageWeight}{measurementUnit}</p>
+        <img src = {image} alt={name}/>
         </section>
           )
   }
 }
 
-// Pokemon.PropTypes = {
-  // name: PropTypes.string,
-  // type: PropTypes.string,
-  // averageWeight: PropTypes.number,
-  // image: PropTypes.string
-// }
+Pokemon.propTypes = {
+  name: PropTypes.string,
+  type: PropTypes.string,
+  averageWeight: PropTypes.number,
+  measurementUnit: PropTypes.string,
+  image: PropTypes.string
+}
 
 export default Pokemon;
