@@ -1,19 +1,46 @@
-import './App.css';
+import React from 'react';
+import Album from './Album'
 
-const task = (value) => {
-  return (
-    <li>{value}</li>
-  );
-}
-const toDo = ['Tomar café da manhã', 'Limpar a sujeira da cachorra', 'Lavar o Banheiro', 'Varrer e passar pano na casa', 'Estudar de 10h as 22h de segunda a sexta', 'Fazer tudo igual no sábado, mas estudando só até 18h'];
+class App extends React.Component {
+  render() {
+    // Declaração do objeto contendo informações do album01
+    const album01 = {
+      image: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Coldplay_-_Mylo_Xyloto.JPG/220px-Coldplay_-_Mylo_Xyloto.JPG',
+      title: 'Mylo Xyloto',
+      releaseDate: {
+        year: '2011',
+        month: '10',
+        day: '24',
+      },
+      others: {
+        recordCompany: 'Capitol, Parlophone',
+        formats: 'CD, digital'
+      }
+    };
 
-function App() {
-  return (
-    <div className="App">
-      {task('Testando')}
-      {toDo.map((task) => <li>{task}</li>)}
-    </div>
-  );
+    // Declaração do objeto contendo informações do album02
+    const album02 = {
+      image: 'https://upload.wikimedia.org/wikipedia/pt/thumb/5/5d/Coldplay_-_Ghost_Stories.jpg/220px-Coldplay_-_Ghost_Stories.jpg',
+      title: 'Ghost Stories',
+      releaseDate: {
+        year: '2014',
+        month: '05',
+        day: '16',
+      },
+      others: {
+        recordCompany: 'Parlophone',
+        formats: 'CD, digital'
+      }
+    };
+
+    // Retorno do que será renderizado
+    return (
+      <article>
+        <Album album={ album01 } />
+        <Album album={ album02 } />
+      </article>
+    );
+  }
 }
 
 export default App;
