@@ -1,18 +1,13 @@
-import React from 'react';
+import './App.css';
+import ShoppingListComponent from './ShoppingList';
 
-class App extends React.Component {
-  render() {
-    const shoppingList = ['leite', 'arroz', 'feijão', 'banana', 'carne'];
-  
-    return (
-      <div>
-        <h2>Lista de compras</h2>
-        <ul>
-          { shoppingList.map((item, index) => <li key={index}>{ item }</li> )}
-        </ul>
-      </div>
-    );
-  }
+
+function App() {
+  return (
+    <div className="App">
+      <ShoppingListComponent />
+    </div>
+  );
 }
 
 export default App;
